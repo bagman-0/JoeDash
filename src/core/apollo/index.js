@@ -16,7 +16,6 @@ let apolloClient;
 // connectToDevTools:
 //   typeof window !== "undefined" && process.NODE_ENV === "development",
 function createApolloClient() {
-  console.log(process.env);
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
 

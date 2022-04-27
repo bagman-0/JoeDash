@@ -1,45 +1,56 @@
 // project imports
 import config from "config";
 
+// import { SWITCH_THEME } from "./reducer";
+// import themes from theme.js
 // action - state management
 import * as actionTypes from "./actions";
+// reducers take a state and an action
 
 export const initialState = {
+  yomama: true,
   isOpen: [], // for active default menu
-  fontFamily: config.fontFamily,
-  borderRadius: config.borderRadius,
-  opened: true
+
+  opened: true,
+  theme: "default"
 };
 
 // ==============================|| CUSTOMIZATION REDUCER ||============================== //
+const SWITCH_THEME = "SWITCH_THEME";
+const lendTheme = {
+  dashAppBar: "green",
+  heading: "#green",
+  // componentBg: chroma(theme.colors.defaultPrimary).alpha(0.7),
 
-const customizationReducer = (state = initialState, action) => {
+  // navbar color
+  // paper: "rgb(121, 134, 203, 0.0)",
+  backgroundDefault: "rgb(27, 18, 107, 1)",
+  // paper background of main page content
+  background: "green",
+  darkTextPrimary: "#fff",
+  darkTextSecondary: "#fff"
+};
+const themeReducer = (state = initialState, action) => {
   let id;
+  console.log(action);
   switch (action.type) {
-    case actionTypes.MENU_OPEN:
+    case actionTypes.SWITCH_THEME:
       id = action.id;
+
       return {
         ...state,
-        isOpen: [id]
+        isOpen: [id],
+        theme: lendTheme
       };
+
     case actionTypes.SET_MENU:
       return {
         ...state,
         opened: action.opened
-      };
-    case actionTypes.SET_FONT_FAMILY:
-      return {
-        ...state,
-        fontFamily: action.fontFamily
-      };
-    case actionTypes.SET_BORDER_RADIUS:
-      return {
-        ...state,
-        borderRadius: action.borderRadius
       };
     default:
       return state;
   }
 };
 
-export default customizationReducer;
+export default themeReducer;

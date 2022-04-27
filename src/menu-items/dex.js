@@ -6,49 +6,41 @@ const icons = { IconDashboard };
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
-const staking = {
-  id: "staking",
-  title: "Staking",
+const dex = {
+  id: "dex",
+  title: "dex",
   type: "group",
   children: [
-    // {
-    //   id: "stakingjoe",
-    //   title: "JOE Stakes",
-    //   type: "item",
-    //   url: "/joes",
-    //   icon: icons.IconDashboard,
-    //   breadcrumbs: false
-    // },
     {
-      id: "stakingjoe",
-      title: "JOE Stakes",
+      id: "dexpages",
+      title: "DEX",
       type: "collapse",
-      url: "/joes",
+      url: "/dex",
       icon: icons.IconDashboard,
       breadcrumbs: false,
 
       children: [
         {
-          id: "stablejoe",
-          title: "sJOE",
+          id: "dexlending",
+          title: "lending",
           type: "item",
-          url: "/stablejoe",
+          url: "/lending",
           icon: icons.IconDashboard,
           breadcrumbs: false
         },
         {
-          id: "rocketjoe",
-          title: "rJOE",
+          id: "dexpairs",
+          title: "pairs",
           type: "item",
-          url: "/rocketjoe",
+          url: "/pairs",
           icon: icons.IconDashboard,
           breadcrumbs: false
         },
         {
-          id: "vejoe",
-          title: "veJOE",
+          id: "dexpools",
+          title: "pools",
           type: "item",
-          url: "/vejoe",
+          url: "/pools",
           icon: icons.IconDashboard,
           breadcrumbs: false
         }
@@ -57,4 +49,4 @@ const staking = {
   ]
 };
 
-export default staking;
+export default dex;

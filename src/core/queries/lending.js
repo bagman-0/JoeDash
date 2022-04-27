@@ -42,7 +42,7 @@ export const marketDayDatasQuery = gql`
     marketDayDatas(
       first: $first
       orderBy: date
-      orderDirection: desc
+      orderDirection: asc
       where: { market_in: $markets, date_gte: $date }
     ) {
       id
